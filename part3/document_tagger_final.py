@@ -49,11 +49,17 @@ def main():
     #dir=str(raw_input("Enter the source dir: "))
 
     dir = "texts"
+    key1=str(raw_input("Enter word to search: "))
+    key2=str(raw_input("Enter word to search: "))
+    key3=str(raw_input("Enter word to search: "))
+
 
     dat=open_doc(dir)
 
     print metadata_extract(dat)
-
+    print "Your search for %s returned: %s" % (key1,count_keywords(key1,dat))
+    print "Your search for %s returned: %s" % (key2,count_keywords(key2,data=dat))
+    print "Your search for %s returned: %s" % (key3,count_keywords(key3,data=dat))
 
 if __name__=="__main__":
     main()
