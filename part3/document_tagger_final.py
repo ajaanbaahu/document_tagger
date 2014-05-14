@@ -42,7 +42,7 @@ def open_doc(input_dir):
             with open(fl_path,'r') as f:
                 data=f.read()
 
-        return data
+                return data
 
 
 def main():
