@@ -46,20 +46,30 @@ def open_doc(input_dir):
 
 
 def main():
-    #dir=str(raw_input("Enter the source dir: "))
-
-    dir = "texts"
+    
+    input_dir=str(raw_input("Enter the source dir: "))
     key1=str(raw_input("Enter word to search: "))
     key2=str(raw_input("Enter word to search: "))
     key3=str(raw_input("Enter word to search: "))
+    for fl in (os.listdir(input_dir)):
+        if fl.endswith('.txt'):
+            fl_path=os.path.join(input_dir,fl)
+
+            with open(fl_path,'r') as f:
+                data=f.read()
 
 
-    dat=open_doc(dir)
 
-    print metadata_extract(dat)
-    print "Your search for %s returned: %s" % (key1,count_keywords(key1,dat))
-    print "Your search for %s returned: %s" % (key2,count_keywords(key2,data=dat))
-    print "Your search for %s returned: %s" % (key3,count_keywords(key3,data=dat))
+    #dir = "texts"
+
+
+
+    # dat=open_doc(dir)
+
+            print metadata_extract(data)
+            print "Your search for %s returned: %s" % (key1,count_keywords(key1,data))
+            print "Your search for %s returned: %s" % (key2,count_keywords(key2,data=data))
+            print "Your search for %s returned: %s" % (key3,count_keywords(key3,data=data))
 
 if __name__=="__main__":
     main()
